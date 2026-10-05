@@ -1,0 +1,11 @@
+name: NPCZ
+version: 1.0.3
+main: com.hiddenknight5.npcz.NPCZPlugin
+author: HiddenKnight5
+commands:
+  npcz:
+    description: Manage NPCZ NPCs
+    usage: /npcz
+permissions:
+  npcz.admin:
+    default: op
