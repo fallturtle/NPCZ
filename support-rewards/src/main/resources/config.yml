@@ -1,0 +1,10 @@
+jackpot-command: "PUT-YOUR-JACKPOT-COMMAND-HERE {player}"
+min-rewards: 1
+max-rewards: 3
+
+messages:
+  common: "&a&lSERVER SUPPORT! &f{player} completed a server-support task and won &a{rewards}&f!"
+  uncommon: "&b&lLUCKY SUPPORT! &f{player} completed a server-support task and won &b{rewards}&f!"
+  rare: "&d&lRARE SUPPORT REWARD! &f{player} completed a server-support task and won &d{rewards}&f!"
+  very-rare: "&6&lINCREDIBLE LUCK! &f{player} completed a server-support task and won &6{rewards}&f!"
+  jackpot: "&c&lJACKPOT! &f{player} just hit the &cSERVER SUPPORT JACKPOT&f!"
