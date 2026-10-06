@@ -19,10 +19,10 @@ jobs:
       - name: Publish JAR
         run: |
           mkdir -p release
-          cp target/npcz-1.0.3.jar release/NPCZ-1.0.3.jar
+          cp target/npcz-1.0.4.jar release/NPCZ-1.0.4.jar
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add release/NPCZ-1.0.3.jar
+          git add release/NPCZ-1.0.4.jar
           git diff --cached --quiet && exit 0
-          git commit -m "Publish NPCZ 1.0.3 JAR"
+          git commit -m "Publish NPCZ 1.0.4 JAR"
           git push origin HEAD:main
