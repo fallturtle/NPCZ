@@ -1,11 +1,19 @@
 name: NPCZ
-version: 1.0.4
+version: 1.0.5
 main: com.hiddenknight5.npcz.NPCZPlugin
 author: HiddenKnight5
 commands:
   npcz:
     description: Manage NPCZ NPCs
     usage: /npcz
+    permission: npcz.admin
+  rtp:
+    description: Teleport to a random safe location using NPCZ
+    usage: /rtp
+  rtpsetup:
+    description: Configure NPCZ built-in RTP radius
+    usage: /rtpsetup <min> <max>
+    permission: npcz.admin
 permissions:
   npcz.admin:
     default: op
