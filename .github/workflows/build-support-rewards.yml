@@ -1,0 +1,29 @@
+name: Build ServerSupportRewards
+on:
+  push:
+    paths:
+      - 'support-rewards/**'
+      - '.github/workflows/build-support-rewards.yml'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: support-rewards
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '8'
+      - uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: maven-${{ runner.os }}-${{ hashFiles('support-rewards/pom.xml') }}
+      - run: mvn -B package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ServerSupportRewards-1.0.0
+          path: support-rewards/target/ServerSupportRewards-1.0.0.jar
+          if-no-files-found: error
