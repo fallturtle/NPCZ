@@ -132,6 +132,16 @@ public class NPCZPlugin extends JavaPlugin implements Listener, CommandExecutor 
         }
     }
 
+    private Map<String, String> find(Entity entity) {
+        String uuid = entity.getUniqueId().toString();
+        for (Map<String, String> npc : npcs.values()) {
+            if (uuid.equals(npc.get("uuid"))) {
+                return npc;
+            }
+        }
+        return null;
+    }
+
     private boolean isNpc(Entity entity) {
         return find(entity) != null;
     }
