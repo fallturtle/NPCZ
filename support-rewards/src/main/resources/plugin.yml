@@ -1,0 +1,9 @@
+name: ServerSupportRewards
+version: 1.0.0
+main: hiddenknight5.supportrewards.ServerSupportRewards
+author: HiddenKnight5
+description: EaglerHost server-support reward plugin for Minecraft 1.12.2
+commands:
+  supportreward:
+    description: Gives a random server-support reward. Console only.
+    usage: /supportreward <player>
