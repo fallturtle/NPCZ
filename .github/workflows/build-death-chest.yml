@@ -2,6 +2,8 @@ name: Build DeathChest
 on:
   push:
     branches: [death-chest-plugin]
+  pull_request:
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
