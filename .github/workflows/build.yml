@@ -16,8 +16,16 @@ jobs:
           java-version: '8'
           cache: maven
       - run: mvn -B package
-      - name: Upload JAR to ChatGPT handoff
+      - name: Build DeathChest
+        working-directory: death-chest
+        run: mvn -B package
+      - name: Upload NPCZ JAR
         uses: actions/upload-artifact@v4
         with:
           name: NPCZ-1.0.4
           path: target/npcz-1.0.4.jar
+      - name: Upload DeathChest JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: DeathChest-1.0.0
+          path: death-chest/target/DeathChest-1.0.0.jar
