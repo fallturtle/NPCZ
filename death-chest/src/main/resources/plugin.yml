@@ -1,0 +1,5 @@
+name: DeathChest
+version: 1.0.0
+main: hiddenknight5.deathchest.DeathChestPlugin
+author: HiddenKnight5
+api-version: 1.12
