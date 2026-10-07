@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: DeathChest-1.0.0
-          path: death-chest/target/DeathChest-1.0.0.jar
+          path: death-chest/target/deathchest-1.0.0.jar
