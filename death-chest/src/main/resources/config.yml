@@ -1,0 +1,8 @@
+reveal-time-minutes: 10
+xp-points-per-bottle: 3
+messages:
+  private-location: '&c☠ &fYour items are in a death chest at &eX: {x} Y: {y} Z: {z}&f.'
+  countdown: '&e☠ &fYour death chest will become public in &e{time}&f.'
+  revealed: '&6⚠ &f{player}''s death chest has been unclaimed! Location: &eX: {x} Y: {y} Z: {z}'
+  claimed: '&a✓ &fYour death chest has been claimed.'
+  no-space: '&cYour death chest could not be placed safely, so your items were dropped normally.'
