@@ -2,6 +2,8 @@ name: Build Fixed WorldEvents
 on:
   push:
     branches: ["worldevents-fixed"]
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
 jobs:
   build:
