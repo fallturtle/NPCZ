@@ -1,0 +1,5 @@
+name: SkriptAutoReloader
+version: 1.0.0
+main: hiddenknight5.skriptautoreloader.SkriptAutoReloader
+author: HiddenKnight5
+api-version: 1.12
