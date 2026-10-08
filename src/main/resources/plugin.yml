@@ -1,19 +1,13 @@
-name: NPCZ
-version: 1.0.5
-main: com.hiddenknight5.npcz.NPCZPlugin
+name: WorldEvents
+version: 1.0.0
+main: hiddenknight5.worldevents.WorldEventsPlugin
 author: HiddenKnight5
+description: Dynamic random, manual, triggered and treasure-hunt world events.
 commands:
-  npcz:
-    description: Manage NPCZ NPCs
-    usage: /npcz
-    permission: npcz.admin
-  rtp:
-    description: Teleport to a random safe location using NPCZ
-    usage: /rtp
-  rtpsetup:
-    description: Configure NPCZ built-in RTP radius
-    usage: /rtpsetup <min> <max>
-    permission: npcz.admin
+  event:
+    description: Manage world events
+    usage: /event
+    permission: worldevents.admin
 permissions:
-  npcz.admin:
+  worldevents.admin:
     default: op
