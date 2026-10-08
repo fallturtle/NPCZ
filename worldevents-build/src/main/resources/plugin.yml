@@ -1,0 +1,13 @@
+name: WorldEvents
+version: 1.0.0
+main: hiddenknight5.worldevents.WorldEventsPlugin
+author: HiddenKnight5
+description: Dynamic world events.
+commands:
+  event:
+    description: Manage world events
+    usage: /event
+    permission: worldevents.admin
+permissions:
+  worldevents.admin:
+    default: op
