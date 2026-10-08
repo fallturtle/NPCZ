@@ -5,6 +5,10 @@ on:
     paths:
       - "skript-autoreloader/**"
       - ".github/workflows/build-skript-autoreloader.yml"
+  pull_request:
+    paths:
+      - "skript-autoreloader/**"
+      - ".github/workflows/build-skript-autoreloader.yml"
   workflow_dispatch:
 
 jobs:
