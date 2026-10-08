@@ -1,0 +1,28 @@
+name: Build Fixed WorldEvents
+on:
+  push:
+    branches: ["worldevents-fixed"]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: worldevents-build
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '8'
+          cache: maven
+          cache-dependency-path: worldevents-build/pom.xml
+      - run: mvn -B clean package
+      - run: |
+          test -f target/WorldEvents-1.0.0.jar
+          jar tf target/WorldEvents-1.0.0.jar | grep 'hiddenknight5/worldevents/WorldEventsPlugin.class'
+          jar tf target/WorldEvents-1.0.0.jar | grep 'plugin.yml'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: WorldEvents-1.0.0-fixed
+          path: worldevents-build/target/WorldEvents-1.0.0.jar
