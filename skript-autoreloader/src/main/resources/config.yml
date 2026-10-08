@@ -1,0 +1,14 @@
+# Minutes between automatic reloads after the initial startup reload.
+reload-interval-minutes: 30
+
+# Delay after the server finishes starting before the first reload.
+startup-delay-seconds: 10
+
+# Skript file to reload.
+skript-name: "superweapons"
+
+# Console messages.
+messages:
+  reloading: "&e[SkriptAutoReloader] &fReloading Skript: &a{skript}"
+  success: "&a[SkriptAutoReloader] &fReload command sent for &a{skript}&f."
+  failed: "&c[SkriptAutoReloader] &fCould not run the Skript reload command because Skript is not installed."
