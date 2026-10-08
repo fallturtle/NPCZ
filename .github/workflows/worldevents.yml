@@ -2,6 +2,8 @@ name: Build WorldEvents
 on:
   push:
     branches: ["world-events-1.0.0"]
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
 jobs:
   build:
