@@ -1,0 +1,44 @@
+random-events:
+  enabled: true
+  minimum-days: 1
+  maximum-days: 10
+  allow-while-event-active: false
+
+events:
+  purge:
+    duration-minutes: 10
+  zombie-outbreak:
+    duration-minecraft-days: 1
+  meteor-shower:
+    meteors: 12
+    radius: 120
+    explosion-power: 2.0
+  supply-drop:
+    radius: 300
+  boss-attack:
+    health: 150.0
+  eclipse:
+    duration-minecraft-days: 1
+  inferno:
+    duration-minutes: 8
+    fire-radius: 35
+  abandoned-structure:
+    radius: 500
+  treasure-hunt:
+    radius: 1000
+
+random-event-weights:
+  bloodmoon: 15
+  purge: 8
+  meteor_shower: 12
+  supply_drop: 15
+  zombie_outbreak: 12
+  boss_attack: 5
+  eclipse: 6
+  abandoned_structure: 12
+  treasure_hunt: 10
+  inferno: 5
+  unknown_signal: 10
+
+messages:
+  prefix: '&8[&5WorldEvents&8] '
