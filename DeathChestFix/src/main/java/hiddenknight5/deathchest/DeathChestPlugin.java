@@ -95,7 +95,7 @@ public class DeathChestPlugin extends JavaPlugin implements Listener {
         Bukkit.getScheduler().runTask(this, new Runnable() {
             @Override public void run() {
                 for (DeathChest dc : new ArrayList<DeathChest>(chests.values())) {
-                    if (!dc.revealed && dc.owner.equals(player.getUniqueId()) && exists(dc)) {
+                    if (dc.owner.equals(player.getUniqueId()) && exists(dc)) {
                         player.sendMessage(formatMessage("private-location", dc));
                     }
                 }
