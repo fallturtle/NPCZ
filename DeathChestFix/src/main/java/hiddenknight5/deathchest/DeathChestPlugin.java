@@ -221,12 +221,21 @@ public class DeathChestPlugin extends JavaPlugin implements Listener {
         for (String k : data.getConfigurationSection("chests").getKeys(false)) {
             String p = "chests." + k;
             try {
-                DeathChest dc = new DeathChest(UUID.fromString(data.getString(p + ".owner")),
-                    data.getString(p + ".name", "Unknown"), data.getString(p + ".world"),
-                    data.getInt(p + ".x1"), data.getInt(p + ".y1"), data.getInt(p + ".z1"),
-                    data.getInt(p + ".x2"), data.getInt(p + ".y2"), data.getInt(p + ".z2"),
+                UUID owner = UUID.fromString(data.getString(p + ".owner"));
+                String worldValue = data.getString(p + ".world");
+                World world = null;
+                try { world = Bukkit.getWorld(UUID.fromString(worldValue)); } catch (Exception ignored) {}
+                if (world == null) world = Bukkit.getWorld(worldValue);
+                if (world == null) continue;
+                int x1 = data.contains(p + ".x1") ? data.getInt(p + ".x1") : data.getInt(p + ".x");
+                int y1 = data.contains(p + ".y1") ? data.getInt(p + ".y1") : data.getInt(p + ".y");
+                int z1 = data.contains(p + ".z1") ? data.getInt(p + ".z1") : data.getInt(p + ".z");
+                int x2 = data.getInt(p + ".x2"), y2 = data.contains(p + ".y2") ? data.getInt(p + ".y2") : y1;
+                int z2 = data.contains(p + ".z2") ? data.getInt(p + ".z2") : z1;
+                String name = data.getString(p + ".name", data.getString(p + ".player", "Unknown"));
+                DeathChest dc = new DeathChest(owner, name, world.getName(), x1, y1, z1, x2, y2, z2,
                     data.getLong(p + ".deadline"), data.getBoolean(p + ".revealed", false));
-                chests.put(dc.key(), dc);
+                if (exists(dc)) chests.put(dc.key(), dc);
             } catch (Exception ex) { getLogger().warning("Skipping invalid saved death chest: " + k); }
         }
     }
