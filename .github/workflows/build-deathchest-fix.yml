@@ -5,6 +5,10 @@ on:
       - 'DeathChestFix/**'
       - '.github/workflows/build-deathchest-fix.yml'
     branches: [main]
+  pull_request:
+    paths:
+      - 'DeathChestFix/**'
+      - '.github/workflows/build-deathchest-fix.yml'
   workflow_dispatch:
 jobs:
   build:
