@@ -1,0 +1,27 @@
+name: Build DeathChest 1.0.1
+on:
+  push:
+    paths:
+      - 'DeathChestFix/**'
+      - '.github/workflows/build-deathchest-fix.yml'
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '8'
+          cache: maven
+          cache-dependency-path: DeathChestFix/pom.xml
+      - name: Build plugin
+        run: mvn -B -f DeathChestFix/pom.xml clean package
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: DeathChest-1.0.1
+          path: DeathChestFix/target/deathchest-1.0.1.jar
+          if-no-files-found: error
