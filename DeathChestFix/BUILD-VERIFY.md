@@ -1,0 +1,1 @@
+Build verification trigger for DeathChest 1.0.1. The plugin source is in this directory.
